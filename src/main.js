@@ -1,3 +1,4 @@
+
 // Jim Whitehead
 // Created: 4/14/2024
 // Phaser: 3.70.0
@@ -19,9 +20,19 @@ let config = {
     render: {
         pixelArt: true  // prevent pixel art from getting blurred when scaled
     },
-    width: 640,         // 10 tiles, each 16 pixels, scaled 4x
+    width: 960,         // ---10 tiles, each 16 pixels, scaled 4x---
     height: 640,
-    scene: [TinyTown]
+    physics: {
+        default: 'arcade',
+        arcade: {
+            debug: false
+        }
+    },
+    scene: [
+        SkribbleShooter,
+        GameOver,
+        GameWon
+    ]
 }
 
 const game = new Phaser.Game(config);
